@@ -16,6 +16,10 @@ Takes the secret keys from Vault.
 
 **Required**.
 
+### `path`
+
+**Required**. The path to the secrets in Vault (ie. secrets/app_env/stating/bla)
+
 ## Outputs
 
 ### `secrets`
@@ -29,3 +33,4 @@ with:
   address: 'https://bla.bla:8200'
   role_id: 'xxx'
   secret_id: 'xxx'
+  path: 'bla/bla/bla'

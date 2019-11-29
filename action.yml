@@ -13,6 +13,10 @@ inputs:
     description: 'Your Vault secret ID'
     required: true
     default: 'xxx'
+  path:
+    description: 'The path to the secrets'
+    required: true
+    default: 'path/to/your/secrets'
 outputs:
   secrets: # id of output
     description: 'The secrets in K=V format'

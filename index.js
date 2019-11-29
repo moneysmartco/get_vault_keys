@@ -15,7 +15,7 @@ try {
     }).then((auth) => {
         let token = auth['auth']['client_token'];
         vault.token = token;
-        vault.read('secret/app_env/staging/sg/falcon/credit-cards/product_listing_app')
+        vault.read(core.getInput('path'))
             .then((result) => {
                 core.setOutput('secrets', result['data']);
             });
