@@ -1,0 +1,21 @@
+name: 'Get Vault Keys'
+description: "Get the secret keys from Hashicorp's Vault"
+inputs:
+  address:
+    description: 'The URL and port of your Vault host'
+    required: true
+    default: 'http://0.0.0.0:8200'
+  role_id:
+    description: 'Your Vault role ID'
+    required: true
+    default: 'xxx'
+  secret_id:
+    description: 'Your Vault secret ID'
+    required: true
+    default: 'xxx'
+outputs:
+  secrets: # id of output
+    description: 'The secrets in K=V format'
+runs:
+  using: 'node12'
+  main: 'index.js'
