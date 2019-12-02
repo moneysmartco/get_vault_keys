@@ -29184,7 +29184,12 @@ token = vault.approleLogin({
     vault.token = token;
     vault.read(core.getInput('path'))
         .then((result) => {
-            core.setOutput('secrets', result['data']);
+            let secrets = result['data'];
+            let env = '';
+            Object.keys(secrets).forEach(function(key){
+                env += key + '=' + secrets[key] + "\n";
+            });
+            core.setOutput('secrets', JSON.stringify(env));
         }).catch(error => core.setFailed('Fetch Failed! Error: ' + error.message));
 }).catch(error => core.setFailed('Auth Failed! Error: ' + error.message));
 
