@@ -20,6 +20,8 @@ inputs:
 outputs:
   secrets: # id of output
     description: 'The secrets in K=V format'
+  secrets_json:
+    description: 'The secrets in JSON format'
 runs:
   using: 'node12'
   main: 'dist/index.js'
