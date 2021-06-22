@@ -26,6 +26,10 @@ Takes the secret keys from Vault.
 
 The secrets from Vault structured as `KEY=VALUE`
 
+## Updating
+Update `index.js` and ensure `dist/index.js` is updated to apply the action code change. See [here](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action#commit-tag-and-push-your-action-to-github) for more details.
+
+
 ## Example usage
 
     uses: actions/get_vault_keys@v0.1.0
