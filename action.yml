@@ -22,6 +22,8 @@ outputs:
     description: 'The secrets in K=V format'
   secrets_json:
     description: 'The secrets in JSON format'
+  secrets_json_2:
+    description: 'TEst'
 runs:
   using: 'node12'
   main: 'dist/index.js'
