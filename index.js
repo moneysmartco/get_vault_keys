@@ -21,7 +21,7 @@ token = vault.approleLogin({
             Object.keys(secrets).forEach(function(key){
                 env += key + '=' + secrets[key] + "\n";
             });
-            core.setOutput('secrets_json', secrets);
+            core.setOutput('secrets_json', JSON.stringify(secrets));
             core.setOutput('secrets', JSON.stringify(env));
         }).catch(error => core.setFailed('Fetch Failed! Error: ' + error.message));
 }).catch(error => core.setFailed('Auth Failed! Error: ' + error.message));
