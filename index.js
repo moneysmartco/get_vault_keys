@@ -17,14 +17,11 @@ token = vault.approleLogin({
     vault.read(core.getInput('path'))
         .then((result) => {
             let secrets = result['data'];
-            let secretsObject = {};
             let env = '';
             Object.keys(secrets).forEach(function(key){
                 env += key + '=' + secrets[key] + "\n";
-                secretsObject[key] = secrets[key];
             });
             core.setOutput('secrets_json', JSON.stringify(secretsObject));
-            core.setOutput('secrets_json_2', JSON.stringify(secrets));
             core.setOutput('secrets', JSON.stringify(env));
         }).catch(error => core.setFailed('Fetch Failed! Error: ' + error.message));
 }).catch(error => core.setFailed('Auth Failed! Error: ' + error.message));
